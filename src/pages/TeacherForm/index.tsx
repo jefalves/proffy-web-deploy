@@ -12,7 +12,7 @@ import api from '../../services/api';
 
 import './styles.css';
 
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function TeacherForm() {
@@ -76,6 +76,8 @@ function TeacherForm() {
       />
 
       <main>
+      <ToastContainer />
+
         <form onSubmit={handleCreateClass}>
           <fieldset>
             <legend>Seus dados</legend>
