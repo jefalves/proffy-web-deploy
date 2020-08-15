@@ -33,15 +33,8 @@ const TeacherItem: React.FC<TeacherItemProps> = ({ teacher }) => {
         <img src={teacher.avatar} alt={teacher.name} />
         <div>
           <strong>{teacher.name}</strong>
-          <span>
-          <a 
-          target="_blank" 
-          rel="noopener noreferrer"
-          href={`mailto:${teacher.email}`}
-          >
-          {teacher.email}
-          </a>
-          </span>
+          <span>{teacher.subject}</span>
+          <span>{teacher.email}</span>
         </div>
       </header>
 
