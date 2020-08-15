@@ -20,7 +20,6 @@ function TeacherForm() {
   // const history = useHistory();
 
   const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
   const [avatar, setAvatar] = useState('');
   const [whatsapp, setWhatsapp] = useState('');
   const [bio, setBio] = useState('');
@@ -57,7 +56,6 @@ function TeacherForm() {
 
     api.post('classes', {
       name,
-      email,
       avatar,
       whatsapp,
       bio,
@@ -96,14 +94,7 @@ function TeacherForm() {
               onChange={(e) => { setName(e.target.value) }}
             />
 
-            <Input 
-              name="email" 
-              label="Email"
-              value={email}
-              required
-              onChange={(e) => { setEmail(e.target.value) }}
-            />
-
+ 
 
             <Input 
               name="avatar" 

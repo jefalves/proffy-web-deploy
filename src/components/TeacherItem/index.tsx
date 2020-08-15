@@ -10,7 +10,6 @@ export interface Teacher {
   avatar: string;
   bio: string;
   cost: number;
-  email: string;
   name: string;
   subject: string;
   whatsapp: string;
@@ -34,7 +33,6 @@ const TeacherItem: React.FC<TeacherItemProps> = ({ teacher }) => {
         <div>
           <strong>{teacher.name}</strong>
           <span>{teacher.subject}</span>
-          <span>{teacher.email}</span>
         </div>
       </header>
 
