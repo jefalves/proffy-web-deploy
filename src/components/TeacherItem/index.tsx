@@ -37,7 +37,7 @@ const TeacherItem: React.FC<TeacherItemProps> = ({ teacher }) => {
           <a 
           target="_blank" 
           rel="noopener noreferrer"
-          href={`mailtp:${teacher.whatsapp}`}
+          href={`mailto:${teacher.email}`}
           >
           {teacher.email}
           </a>
