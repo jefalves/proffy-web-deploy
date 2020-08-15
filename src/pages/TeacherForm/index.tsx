@@ -4,6 +4,7 @@ import React, { useState, FormEvent } from 'react';
 import PageHeader from '../../components/PageHeader';
 import Input from '../../components/Input';
 import Textarea from '../../components/Textarea';
+
 import Select from '../../components/Select';
 
 import warningIcon from '../../assets/images/icons/warning.svg';
@@ -20,6 +21,7 @@ function TeacherForm() {
   // const history = useHistory();
 
   const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
   const [avatar, setAvatar] = useState('');
   const [whatsapp, setWhatsapp] = useState('');
   const [bio, setBio] = useState('');
@@ -57,6 +59,7 @@ function TeacherForm() {
     api.post('classes', {
       name,
       avatar,
+      email,
       whatsapp,
       bio,
       subject,
@@ -92,6 +95,14 @@ function TeacherForm() {
               value={name}
               required
               onChange={(e) => { setName(e.target.value) }}
+            />
+
+            <Input 
+              name="email" 
+              label="Email" 
+              value={email}
+              required
+              onChange={(e) => { setEmail(e.target.value) }}
             />
 
  

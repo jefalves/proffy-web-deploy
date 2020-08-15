@@ -11,6 +11,7 @@ export interface Teacher {
   bio: string;
   cost: number;
   name: string;
+  email: string;
   subject: string;
   whatsapp: string;
 }
@@ -33,6 +34,7 @@ const TeacherItem: React.FC<TeacherItemProps> = ({ teacher }) => {
         <div>
           <strong>{teacher.name}</strong>
           <span>{teacher.subject}</span>
+          <span>{teacher.email}</span>
         </div>
       </header>
 

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'https://mentor-deploy.herokuapp.com/'
+    baseURL: 'https://connection-application.herokuapp.com/'
 });
 
 export default api;
