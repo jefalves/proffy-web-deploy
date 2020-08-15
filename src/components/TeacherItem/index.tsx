@@ -10,6 +10,7 @@ export interface Teacher {
   avatar: string;
   bio: string;
   cost: number;
+  email: string;
   name: string;
   subject: string;
   whatsapp: string;
@@ -32,7 +33,15 @@ const TeacherItem: React.FC<TeacherItemProps> = ({ teacher }) => {
         <img src={teacher.avatar} alt={teacher.name} />
         <div>
           <strong>{teacher.name}</strong>
-          <span>{teacher.subject}</span>
+          <span>
+          <a 
+          target="_blank" 
+          rel="noopener noreferrer"
+          href={`mailtp:${teacher.whatsapp}`}
+          >
+          {teacher.email}
+          </a>
+          </span>
         </div>
       </header>
 

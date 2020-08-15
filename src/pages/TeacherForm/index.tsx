@@ -15,10 +15,12 @@ import './styles.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+
 function TeacherForm() {
   // const history = useHistory();
 
   const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
   const [avatar, setAvatar] = useState('');
   const [whatsapp, setWhatsapp] = useState('');
   const [bio, setBio] = useState('');
@@ -49,11 +51,13 @@ function TeacherForm() {
     setScheduleItems(updatedScheduleItems);
   }
 
+  
   function handleCreateClass(e: FormEvent) {
     e.preventDefault();
 
     api.post('classes', {
       name,
+      email,
       avatar,
       whatsapp,
       bio,
@@ -67,6 +71,8 @@ function TeacherForm() {
       toast.error("Erro no cadastro!");
     })
   }
+
+
 
   return (
     <div id="page-teacher-form" className="container">
@@ -86,13 +92,24 @@ function TeacherForm() {
               name="name" 
               label="Nome completo" 
               value={name}
+              required
               onChange={(e) => { setName(e.target.value) }}
             />
+
+            <Input 
+              name="email" 
+              label="Email"
+              value={email}
+              required
+              onChange={(e) => { setEmail(e.target.value) }}
+            />
+
 
             <Input 
               name="avatar" 
               label="Avatar"
               value={avatar}
+              required
               onChange={(e) => { setAvatar(e.target.value) }}
             />
 
@@ -100,12 +117,14 @@ function TeacherForm() {
               name="whatsapp" 
               label="WhatsApp"
               value={whatsapp}
+              required
               onChange={(e) => { setWhatsapp(e.target.value) }}
             />
 
             <Textarea 
               name="bio" 
               label="Biografia"
+              required
               value={bio}
               onChange={(e) => { setBio(e.target.value) }}
             />
@@ -118,6 +137,7 @@ function TeacherForm() {
               name="subject" 
               label="Matéria"
               value={subject}
+              required
               onChange={(e) => { setSubject(e.target.value) }}
               options={[
                 { value: 'Artes', label: 'Artes' },
@@ -136,6 +156,7 @@ function TeacherForm() {
             <Input 
               name="cost" 
               label="Custo da sua hora por aula"
+              required
               value={cost}
               onChange={(e) => { setCost(e.target.value) }}
             />
