@@ -12,6 +12,9 @@ import api from '../../services/api';
 
 import './styles.css';
 
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function TeacherForm() {
   const history = useHistory();
 
@@ -58,11 +61,10 @@ function TeacherForm() {
       cost: Number(cost),
       schedule: scheduleItems
     }).then(() => {
-      alert('Cadastro realizado com sucesso!');
-
+      toast.success("Cadastro realizado com sucesso!");
       history.push('/');
     }).catch(() => {
-      alert('Erro no cadastro!');
+      toast.error("Erro no cadastro!");
     })
   }
 
