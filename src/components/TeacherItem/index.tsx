@@ -34,17 +34,23 @@ const TeacherItem: React.FC<TeacherItemProps> = ({ teacher }) => {
         <div>
           <strong>{teacher.name}</strong>
           <span>{teacher.subject}</span>
-          <span>{teacher.email}</span>
+     
         </div>
       </header>
 
       <p>{teacher.bio}</p>
 
       <footer>
-        <p>
-          Preço/hora
-          <strong>R$ {teacher.cost}</strong>
-        </p>
+      <span>
+        <a 
+        className="email"
+          target="_blank" 
+          rel="noopener noreferrer"          
+          href={`mailto:${teacher.email}`}
+        >
+            {teacher.email}
+        </a>
+        </span>
         <a 
           target="_blank" 
           rel="noopener noreferrer"

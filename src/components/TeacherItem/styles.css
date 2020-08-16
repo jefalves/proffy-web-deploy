@@ -71,6 +71,18 @@
     transition: 0.2s;
     text-decoration: none;
   }
+
+  .teacher-item footer .email{
+    background: none;
+    color: var(--color-primary-darker);
+    text-decoration: none;
+  }
+
+  .teacher-item footer .email:hover{
+    background: none;
+    color: var(--color-primary-darker);
+    text-decoration: none;
+  }
   
   .teacher-item footer a:hover {
     background: var(--color-secondary-dark);
